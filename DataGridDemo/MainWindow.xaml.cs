@@ -35,15 +35,23 @@ namespace DataGridDemo
 
     class Student
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public DateTime date_of_birth { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public DateTime Date_Of_Birth { get; set; }
+
+        public string Details
+        {
+            get
+            {
+                return String.Format("{0} was born on {1}.", this.Name, this.Date_Of_Birth.ToLongDateString());
+            }
+        }
 
         public Student(int _id, string _name, DateTime _dob)
         {
-            id = _id;
-            name = _name;
-            date_of_birth = _dob;
+            Id = _id;
+            Name = _name;
+            Date_Of_Birth = _dob;
         }
     }
 

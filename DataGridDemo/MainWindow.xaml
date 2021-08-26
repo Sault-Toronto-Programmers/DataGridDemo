@@ -5,10 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataGridDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="250" Loaded="Window_Loaded">
+        Title="MainWindow" Height="300" Width="450" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="Items">
-            
+        <DataGrid x:Name="Items" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Student Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Birthday" Binding="{Binding Date_Of_Birth}" />
+            </DataGrid.Columns>
+
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Details}" Margin="10" />
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
         </DataGrid>
     </Grid>
 </Window>
